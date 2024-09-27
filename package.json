@@ -1,0 +1,19 @@
+{
+  "name": "@8zali9/server-z",
+  "version": "1.0.0",
+  "description": "npm package to create http server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8zali9/server-z.git"
+  },
+  "author": "Zulfiqar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8zali9/server-z/issues"
+  },
+  "homepage": "https://github.com/8zali9/server-z#readme"
+}
