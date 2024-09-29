@@ -1,4 +1,5 @@
 const http = require("http")
+const { Worker } = require("worker_threads")
 
 class ServerZ {
     constructor() {
@@ -43,4 +44,20 @@ class ServerZ {
     }
 }
 
-module.exports = ServerZ
+class CPUIntensiveTaskExecuter {
+    constructor(main) {
+        this.worker = new Worker("./worker.js", {
+            workerData: { mainFunction: main.toString() }
+        })
+    }
+
+    executeCpuIntensiveTask(callback) {
+        try {
+            this.worker.on("message", result => callback(result))
+        } catch (error) {
+            console.error(error)
+        }
+    }
+}
+
+module.exports = { ServerZ, CPUIntensiveTaskExecuter }
